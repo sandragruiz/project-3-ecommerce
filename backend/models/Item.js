@@ -1,0 +1,1 @@
+/* Name, Description, Price, Color, Size, Seller (User) */
