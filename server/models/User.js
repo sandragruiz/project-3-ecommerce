@@ -1,37 +1,39 @@
-/* Username, email, password, Items the user is selling (Item), payment method info */
-
 const { Schema, model } = require('mongoose');
-const Listing = require('./Listing');
+const bcrypt = require('bcrypt');
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema(
+  {
     username: {
       type: String,
       required: true,
       unique: true,
+      trim: true
     },
     email: {
       type: String,
       required: true,
       unique: true,
+      match: [/.+@.+\..+/, 'Must match an email address!'],
     },
     password: {
       type: String,
       required: true,
+      minlength: 7,
     },
     listings: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: Listing,
+      type: Schema.Types.ObjectId,
+      ref: 'Listing',
     }],
     wishlist: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: Listing,
+      type: Schema.Types.ObjectId,
+      ref: 'Listing',
     }],
     cart: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: Listing,
+      type: Schema.Types.ObjectId,
+      ref: 'Listing',
     }],
   });
   
-  const User = mongoose.model('User', userSchema);
+  const User = model('User', userSchema);
   
   module.exports = User;

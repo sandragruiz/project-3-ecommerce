@@ -1,7 +1,5 @@
 /* Seller, Buyer, Items, Price, Total, Payment, Status */
 const { model, Schema } = require('mongoose');
-const User = require('./User');
-const Listing = require('./Listing');
 
 const orderSchema = new Schema(
     {
@@ -10,7 +8,8 @@ const orderSchema = new Schema(
             required: true
         },
         customer: {
-            User,
+            type: Schema.Types.ObjectId,
+            ref: 'User',
             required: true
         },
         total: {
@@ -34,7 +33,7 @@ const orderSchema = new Schema(
             ref: 'Listing'
         }
     }
-)
+);
 
 const Order = model('Order', orderSchema);
 
