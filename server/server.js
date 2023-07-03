@@ -7,14 +7,15 @@ const { authMiddleware } = require('./utils/auth');
 dotenv.config();
 
 const { typeDefs, resolvers } = require('./schemas');
-const db = require('./config/connection');
+const { connectDB }  = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: authMiddleware,
+  context: ({ req }) => authMiddleware(req),
+  introspection: true,
 });
 
 app.use(express.urlencoded({ extended: false }));
@@ -32,7 +33,7 @@ const startApolloServer = async () => {
   await server.start();
   server.applyMiddleware({ app });
   
-  db.once('open', () => {
+  connectDB().then(() => {
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);

@@ -2,20 +2,10 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 // Generate a JWT token
-function generateToken({ email, username, _id }) {
+function signToken({ email, username, _id }) {
   const payload = { email, username, _id };
   const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
   return token;
-}
-
-// Verify and decode a JWT token
-function verifyToken(token) {
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    return decoded;
-  } catch (err) {
-    throw new Error('Invalid token');
-  }
 }
 
 // Middleware to verify the JWT token in incoming requests
@@ -27,7 +17,7 @@ function authMiddleware(req, res, next) {
   }
 
   try {
-    const decoded = verifyToken(token);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded; // Attach the decoded user data to the request object
     next();
   } catch (err) {
@@ -36,7 +26,6 @@ function authMiddleware(req, res, next) {
 }
 
 module.exports = {
-  generateToken,
-  verifyToken,
+  signToken,
   authMiddleware,
 };
