@@ -13,7 +13,8 @@
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "dependencies": {
-    "concurrently": "^7.0.0"
+    "concurrently": "^7.0.0",
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
     "eslint": "^8.44.0",

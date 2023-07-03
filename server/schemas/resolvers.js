@@ -1,14 +1,15 @@
 const { User, Listing, Category, Order } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
-const { generateToken, verifyToken, authMiddleware } = require('../utils/auth');
+const { signToken } = require('../utils/auth');
 
 
 // Create the functions that fulfill the queries defined in `typeDefs.js`
 const resolvers = {
   Query: {
-    users: async () => {
-      return await User.find({});
-    }
+    user: async (_parent, { email }) => {
+      return User.findOne({ email })
+        .select('-__v -password')
+    },
   },
 
 Mutation: {
@@ -16,7 +17,7 @@ Mutation: {
     // create the user
     const user = await User.create({ username, email, password });
     // to reduce friction for the user, sign a JSON Web Token and log the user in after they are created
-    const token = generateToken(user);
+    const token = signToken(user);
     // Return an `Auth` object that consists of the signed token and user's information
     return { token, user };
   },
@@ -38,7 +39,7 @@ Mutation: {
     }
 
     // If email and password are correct, sign user into the application with a JWT
-    const token = verifyToken(user);
+    const token = signToken(user);
 
     // Return an `Auth` object that consists of the signed token and user's information
     return { token, user };
