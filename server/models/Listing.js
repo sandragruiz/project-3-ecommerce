@@ -38,10 +38,11 @@ const listingSchema = new Schema(
             type: Date,
             required: true
         },
-        categories: {
+        category_id: {
             type: Schema.Types.ObjectId,
             ref: 'Category'
-        }
+        },
+        image: String
     }
 )
 
