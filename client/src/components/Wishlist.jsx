@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Footer = () => {
+const Wishlist = () => {
 
     return (
     <div></div>
 );
 };
 
-export default Footer;
+export default Wishlist;
