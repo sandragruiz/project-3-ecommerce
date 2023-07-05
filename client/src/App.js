@@ -1,5 +1,4 @@
 //import components here.
-import './App.css';
 
 function App() {
   return (
