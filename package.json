@@ -1,8 +1,15 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^3.3.2",
-    "graphql": "^15.5.0",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.0.2"
+  "name": "threads-resurrected",
+  "version": "1.0.0",
+  "description": "Project 3 edx bootcamp",
+  "main": "backend/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.0"
   }
 }
