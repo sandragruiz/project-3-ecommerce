@@ -1,7 +1,5 @@
 /* Name, Description, Price, Color, Condition, Category, Size, Seller (User), CreatedAt */
 const { Schema, model } = require('mongoose');
-const User = require('./User');
-const Category = require('./Category');
 
 const listingSchema = new Schema(
     {
@@ -9,7 +7,7 @@ const listingSchema = new Schema(
             type: String,
             required: true
         },
-        name: {
+        title: {
             type: String,
             required: true
         },
@@ -33,7 +31,8 @@ const listingSchema = new Schema(
             required: true
         },
         seller: {
-            User
+            type: Schema.Types.ObjectId,
+            ref: 'User'
         },
         createdAt: {
             type: Date,
