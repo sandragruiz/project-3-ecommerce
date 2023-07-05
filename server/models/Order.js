@@ -24,7 +24,7 @@ const orderSchema = new Schema(
             type: String,
             required: true,
         },
-        status: {
+        orderStatus: {
             type: String,
             required: true
         },

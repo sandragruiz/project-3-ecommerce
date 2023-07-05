@@ -9,22 +9,27 @@ function signToken({ email, username, _id }) {
 }
 
 // Middleware to verify the JWT token in incoming requests
-function authMiddleware(req, res, next) {
-  const token = req.headers.authorization?.split(' ')[1]; // Extract the token from the "Authorization" header
+function authMiddleware ({ req }) {
+  // allows token to be sent via req.body, req.query, or headers
+  let token = req.body.token || req.query.token || req.headers.authorization;
 
+  // ["Bearer", "<tokenvalue>"]
+  if (req.headers.authorization) {
+    token = token.split(' ').pop().trim();
+  }
   if (!token) {
-    return res.status(401).json({ message: 'Access denied' });
+    return req;
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded; // Attach the decoded user data to the request object
-    next();
-  } catch (err) {
-    return res.status(401).json({ message: 'Invalid token' });
+    const { data } = jwt.verify(token, secret, { maxAge: expiration });
+    req.user = data;
+  } catch {
+    console.log('Invalid token');
   }
-}
 
+  return req;
+}
 module.exports = {
   signToken,
   authMiddleware,

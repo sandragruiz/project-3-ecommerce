@@ -14,7 +14,7 @@ const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({ req }) => authMiddleware(req),
+  context: authMiddleware,
   introspection: true,
 });
 
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
-const startApolloServer = async () => {
+const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
   
@@ -41,4 +41,4 @@ const startApolloServer = async () => {
   })
   };
   
-  startApolloServer();
+  startApolloServer(typeDefs, resolvers);
