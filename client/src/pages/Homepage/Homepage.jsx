@@ -1,12 +1,15 @@
 import React from 'react';
+import { Navbar }  from '../../components/Navbar';
 
-const Homepage = () => {
 
+function App() {
     return (
-    <div>
-        home
-    </div>
-);
-};
+      <div>
+        <Navbar />
+        {/* Add components or content */}
+      </div>
+    );
+  }
+  
 
-export default Homepage;
+export default App;
