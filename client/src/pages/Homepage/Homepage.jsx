@@ -9,7 +9,7 @@ import { Footer } from '../../components/Footer'
 import { OrderSummary } from '../../components/OrderSummary'
 import { ProductCard } from '../../components/ProductCard'
 import { ViewUser } from '../../components/ViewUser'
-
+import { Login }  from '../../components/Login'
 const Homepage = () => {
 
     return (
