@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ProductCard = () => {
+export const ProductCard = () => {
 
     return (
-    <div></div>
+    <div>
+        ProductCard
+    </div>
 );
 };
-
-export default ProductCard;

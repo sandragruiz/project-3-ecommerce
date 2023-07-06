@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Wishlist = () => {
+export const Wishlist = () => {
 
     return (
-    <div></div>
+    <div>
+        wishlist
+    </div>
 );
 };
-
-export default Wishlist;

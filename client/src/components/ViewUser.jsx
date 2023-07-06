@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ViewUser = () => {
+export const ViewUser = () => {
 
     return (
-    <div></div>
+    <div>
+        ViewUser
+    </div>
 );
 };
-
-export default ViewUser;

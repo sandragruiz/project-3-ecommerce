@@ -1,10 +1,10 @@
 import React from 'react';
 
-const OrderSummary = () => {
+export const OrderSummary = () => {
 
     return (
-    <div></div>
+    <div>
+        order summary
+    </div>
 );
 };
-
-export default OrderSummary;
