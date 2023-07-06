@@ -1,16 +1,31 @@
 import React from 'react';
-import { Navbar }  from '../../components/Navbar';
-import { Login }  from '../../components/Login'
 
-function App() {
+import { Navbar } from '../../components/Navbar'
+import { Wishlist } from '../../components/Wishlist'
+import { Login } from '../../components/Login'
+import { SignUp } from '../../components/Signup'
+import { Cart } from '../../components/Cart'
+import { Footer } from '../../components/Footer'
+import { OrderSummary } from '../../components/OrderSummary'
+import { ProductCard } from '../../components/ProductCard'
+import { ViewUser } from '../../components/ViewUser'
+
+const Homepage = () => {
+
     return (
-      <div>
+    <div>
         <Navbar />
         <Login />
-        {/* Add components or content */}
-      </div>
-    );
-  }
-  
+        <SignUp />
+        <ProductCard />
+        <Cart />
+        <OrderSummary />
+        <ViewUser />
+        <Wishlist />
+        <Footer />
+        homepage
+    </div>
+);
+};
 
-export default App;
+export default Homepage;
