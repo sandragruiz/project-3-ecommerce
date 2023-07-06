@@ -1,19 +1,17 @@
 import React from 'react';
 
-const Navbar = () => {
-  
-    return (
-    <div className='fixed w-full h-[100px] flex justify-between items-center px-4'>
-      
-      <div>
-        <ul className='hidden md:flex'>
-         
-        </ul>
-      </div>
-  
-    </div>
-    );
-};
+     export const  Navbar = () => {
+  return (
+    <nav>
+      <h1>Thrift Store</h1>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/products">Products</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  );
+}
 
-export default Navbar;
+
 
