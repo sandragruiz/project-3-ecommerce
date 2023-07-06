@@ -7,4 +7,4 @@ import Signup from './Signup.jsx';
 import Wishlist from './Wishlist.jsx';
 import Cart from './Cart.jsx';
 
-export { Navbar, Footer, ProductCard, ViewUser, OrderSummary, Signup, Wishlist, Cart };
+export const { Navbar, Footer, ProductCard, ViewUser, OrderSummary, Signup, Wishlist, Cart };
