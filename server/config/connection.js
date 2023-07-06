@@ -6,7 +6,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Connect to MongoDB
 const connectDB = async () => {
   try {
-    await mongoose.connect(MONGODB_URI || "mongodb://127.0.0.1:27017", {
+    await mongoose.connect(MONGODB_URI || "mongodb://127.0.0.1:27017/threads:resurrected", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
