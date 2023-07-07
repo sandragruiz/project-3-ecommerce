@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm install && npm run build"
   },
   "engines": {
     "node": "16.x"
