@@ -12,14 +12,20 @@ export const LOGIN_USER = gql`
   }
 `;
 
-export const ADD_USER = gql`
-  mutation createUser($username: String!, $email: String!, $password: String!) {
-    addProfile(username: $username, email: $email, password: $password) {
+export const SIGNUP_USER = gql`
+  mutation addUser($username: String!, $email: String!, $password: String!) {
+    addUser(username: $username, email: $email, password: $password) {
       token
-      profile {
+      user {
         _id
         username
       }
     }
   }
 `;
+
+// export const CREATE_LISTING = gql`
+// `;
+
+// export const DELETE_LISTING = gql`
+// `;
