@@ -39,6 +39,6 @@ function App() {
       </BrowserRouter>
     </ApolloProvider>
   );
-}
+};
 
 export default App();

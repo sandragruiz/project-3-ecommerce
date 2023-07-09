@@ -1,11 +1,21 @@
-import { Navbar } from './Navbar.jsx';
-import { Footer } from './Footer.jsx';
-import { ProductCard } from './ProductCard.jsx';
-import { ViewUser } from './ViewUser.jsx';
-import { OrderSummary } from './OrderSummary.jsx';
-import { SignUp } from './Signup.jsx';
-import { Wishlist } from './Wishlist.jsx';
-import { Cart } from './Cart.jsx';
-import { Login } from './Login.jsx';
+import { Navbar } from './navbar/Navbar';
+import { Footer } from './footer/Footer';
+import { ProductCard } from './product-card/ProductCard';
+import { ViewUser } from './view-user/ViewUser';
+import { OrderSummary } from './order-summary/OrderSummary';
+import { SignUp } from './signup/Signup';
+import { Wishlist } from './wishlist/Wishlist';
+import { Cart } from './shopping-cart/Cart';
+import { Login } from './login/Login'
+import { Homepage } from './homepage/Homepage';
 
-export { Navbar, Footer, ProductCard, ViewUser, OrderSummary, Login, SignUp, Wishlist, Cart };
+export { Navbar };
+export { Footer };
+export { ProductCard };
+export { ViewUser };
+export { OrderSummary };
+export { SignUp };
+export { Wishlist };
+export { Cart };
+export { Login };
+export { Homepage };
