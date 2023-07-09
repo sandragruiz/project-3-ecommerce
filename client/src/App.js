@@ -1,17 +1,18 @@
-//import components here.
 import React from 'react';
-import Homepage from './pages/Homepage/Homepage';
+//import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Navbar } from './components/navbar/Navbar';
+// Import other components and set up routes
+import '../src/index.css'
 
-
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Homepage />
-     
-      hello
-    </div>
+    //<Router>
+      <Navbar />
+      //<Switch>
+       // {/* Define your routes and render components */}
+      //</Switch>
+    //</Router>
   );
-}
+};
 
 export default App;
