@@ -1,17 +1,20 @@
 import React from 'react';
-//import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Navbar } from './components/navbar/Navbar';
-// Import other components and set up routes
-import '../src/index.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Navbar from './components/navbar/Navbar';
+import SignUp from './components/signup/Signup';
+import Login from './components/login/Login';
 
 const App = () => {
   return (
-    //<Router>
+    <Router>
       <Navbar />
-      //<Switch>
-       // {/* Define your routes and render components */}
-      //</Switch>
-    //</Router>
+      <Routes>
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        {/* Other routes */}
+      </Routes>
+    </Router>
   );
 };
 
