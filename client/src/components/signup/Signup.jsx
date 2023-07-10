@@ -6,6 +6,7 @@ import Auth from '../../utils/auth';
 export const SignUp = () => {
     const [ addUser ] = useMutation(SIGNUP_USER);
 
+    // handleFormSubmit function returns a 404 error, possibly needs to route back to home??
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         const mutationResult = await addUser({
@@ -21,8 +22,8 @@ export const SignUp = () => {
 
     return (
     <div>
-        <h2> Sign Up!!</h2>
-        <form onSubmit={handleFormSubmit}>
+        <h2> Sign Up!</h2>
+        <form>
             <label htmlFor='username'>Username</label>
             <input name='username' id='username'></input>
 
@@ -31,6 +32,9 @@ export const SignUp = () => {
 
             <label htmlFor="password">Password</label>
             <input name='password' id='password'></input>
+            <button className="btn btn-info btn-block py-3" type="submit" onClick={handleFormSubmit}>
+            Sign Up!
+          </button>
         </form>
     </div>
 );

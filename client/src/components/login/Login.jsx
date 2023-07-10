@@ -19,7 +19,7 @@ export const  Login = () => {
 
   return (
     <div>
-      <h2>Login</h2>
+      <h2>Please login to continue!</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email:</label>
@@ -39,7 +39,7 @@ export const  Login = () => {
             onChange={handlePasswordChange}
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Login!</button>
       </form>
     </div>
   );

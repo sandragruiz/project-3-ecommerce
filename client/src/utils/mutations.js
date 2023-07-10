@@ -19,6 +19,8 @@ export const SIGNUP_USER = gql`
       user {
         _id
         username
+        email
+        password
       }
     }
   }
