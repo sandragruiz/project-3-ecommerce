@@ -7,9 +7,9 @@ import { ApolloClient, InMemoryCache, } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
 import { Footer } from './components/footer/Footer';
 import { SignUp } from './components/signup/Signup';
-// import { Login } from './components/login/Login';
 import { Navbar } from './components/navbar/Navbar';
 import '../src/index.css';
+import { Login } from './components/login/Login';
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -36,6 +36,10 @@ function App() {
               <Route 
                 path="/signup" 
                 element={<SignUp />} 
+              />
+              <Route 
+                path="/login" 
+                element={<Login />} 
               />
             </Routes>
           </div>
