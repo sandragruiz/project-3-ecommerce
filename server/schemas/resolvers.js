@@ -4,6 +4,20 @@ const { signToken } = require('../utils/auth');
 
 
 // Create the functions that fulfill the queries defined in `typeDefs.js`
+
+const getListingHiddenFields = async (_, { listingId }) => {
+  try {
+    const listing = await Listing.findById(listingId).select('color condition size').exec();
+    return {
+      color: listing.color,
+      condition: listing.condition,
+      description: listing.description
+    };
+  } catch (error) {
+    throw new Error('Failed to fetch listing hidden fields.');
+  }
+};
+
 const resolvers = {
   Query: {
     user: async (_parent, { email }) => {
@@ -11,7 +25,10 @@ const resolvers = {
         .select('-__v -password')
     },
   },
-
+    Query: {
+      getListingHiddenFields
+    }
+  };
 Mutation: {
   addUser: async (parent, { username, email, password }) => {
     // create the user
@@ -20,7 +37,7 @@ Mutation: {
     const token = signToken(user);
     // Return an `Auth` object that consists of the signed token and user's information
     return { token, user };
-  },
+  };
   login: async (parent, { email, password }) => {
     // Look up the user by the provided email address. Since the `email` field is unique, we know that only one person will exist with that email
     const user = await User.findOne({ email });
@@ -43,9 +60,6 @@ Mutation: {
 
     // Return an `Auth` object that consists of the signed token and user's information
     return { token, user };
-  },
+  }
   
-},
 };
-
-module.exports = resolvers;

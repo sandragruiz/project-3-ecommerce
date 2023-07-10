@@ -10,6 +10,7 @@ import { SignUp } from './components/signup/Signup';
 import { Navbar } from './components/navbar/Navbar';
 import '../src/index.css';
 import { Login } from './components/login/Login';
+import { Example } from './components/results-page/Results'
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -40,6 +41,10 @@ function App() {
               <Route 
                 path="/login" 
                 element={<Login />} 
+              />
+              <Route
+                path="/results"
+                element={<Example />}
               />
             </Routes>
           </div>
