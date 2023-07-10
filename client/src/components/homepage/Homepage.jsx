@@ -46,7 +46,7 @@ export const Homepage = () => {
           {/* About Section */}
       <div className="bg-white py-16 sm:py-24 lg:py-32">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-8">
             About Us
           </h2>
           <p className="text-lg text-gray-800 mb-8">
@@ -59,7 +59,7 @@ export const Homepage = () => {
       {/* Contact Form Section */}
       <div className="bg-gray-100 py-16 sm:py-24 lg:py-32">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-8">
             Contact Us
           </h2>
           <form>
