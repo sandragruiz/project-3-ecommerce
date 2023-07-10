@@ -1,39 +1,45 @@
+//import components here.
 import React from 'react';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-//import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import  { Homepage } from './components/homepage/Homepage';
+import { ApolloClient, InMemoryCache, } from '@apollo/client';
+// import { setContext } from '@apollo/client/link/context';
+import { ApolloProvider } from '@apollo/client';
+import { Footer } from './components/footer/Footer';
+import { SignUp } from './components/signup/Signup';
+// import { Login } from './components/login/Login';
 import { Navbar } from './components/navbar/Navbar';
-import { Homepage } from './components/homepage/Homepage';
-// Import other components and set up routes
-import '../src/index.css'
+import '../src/index.css';
 
 const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache(),
 });
 
-
-const App = () => {
+function App() {
   return (
-<ApolloProvider client={client}>
+    <ApolloProvider client={client}>
       {/* Wrap page elements in Router component to keep track of location state */}
+      <Navbar />
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          <Navbar />
           <div className="container">
             {/* Wrap Route elements in a Routes component */}
             <Routes>
               {/* Define routes using the Route component to render different page components at different paths */}
               {/* Define a default route that will render the Home component */}
-              <Route 
-              path='/' element={<Homepage />}
+              <Route
+                path="/" 
+                element={<Homepage />} 
               />
               {/* Define a route that will take in variable data */}
               <Route 
+                path="/signup" 
+                element={<SignUp />} 
               />
             </Routes>
           </div>
-          {/* footer */}
+          <Footer />
         </div>
       </Router>
     </ApolloProvider>
