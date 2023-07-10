@@ -18,7 +18,7 @@ export const Navbar = () => {
 
       {/* Logo and Site Name */}
       <div className="w-full md:w-auto flex items-center justify-center md:justify-start mb-4 md:mb-0">
-        <span className="text-lg font-bold">Threads:Resurrected</span>
+        <span className="text-3xl font-bold">Threads:Resurrected</span>
       </div>
 
       <div className="w-full md:w-auto flex items-center justify-center md:justify-end space-x-4">
