@@ -1,7 +1,7 @@
 import React from 'react';
-import { SIGNUP_USER } from '../utils/mutations';
+import { SIGNUP_USER } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';
-import Auth from '../utils/auth';
+import Auth from '../../utils/auth';
 
 export const SignUp = () => {
     const [ addUser ] = useMutation(SIGNUP_USER);

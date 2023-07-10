@@ -18,18 +18,18 @@ export const GET_BY_USER = gql`
   }
 `;
 
-export const GET_BY_CATEGORY = gql`
+// export const GET_BY_CATEGORY = gql`
 
-`;
+// `;
 
-export const GET_BY_SIZE = gql`
+// export const GET_BY_SIZE = gql`
 
-`;
+// `;
 
-export const GET_BY_CONDITION = gql`
+// export const GET_BY_CONDITION = gql`
 
-`;
+// `;
 
-export const GET_BY_COLOR = gql`
+// export const GET_BY_COLOR = gql`
 
-`;
+// `;

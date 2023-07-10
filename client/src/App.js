@@ -1,44 +1,49 @@
 //import components here.
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Homepage from './pages/Homepage/Homepage';
-import { Footer, Login, Navbar, SignUp } from './components';
-
-const httpLink = createHttpLink({
-  uri: '/graphql',
-});
-
-const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
-  };
-});
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import  { Homepage } from './components/homepage/Homepage';
+import { ApolloClient, InMemoryCache, } from '@apollo/client';
+// import { setContext } from '@apollo/client/link/context';
+import { ApolloProvider } from '@apollo/client';
+import { Footer } from './components/footer/Footer';
+import { SignUp } from './components/signup/Signup';
+// import { Login } from './components/login/Login';
+import { Navbar } from './components/navbar/Navbar';
+import '../src/index.css';
 
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  uri: '/graphql',
   cache: new InMemoryCache(),
 });
 
 function App() {
   return (
     <ApolloProvider client={client}>
-      <BrowserRouter>
-        <Navbar />
-          <Switch>
-            <Route exact path='/' component={Homepage} />
-            <Route exact path='/signup' component={SignUp} />
-            <Route exact path='/login' component={Login} />
-          </Switch>
-        <Footer />
-      </BrowserRouter>
+      {/* Wrap page elements in Router component to keep track of location state */}
+      <Navbar />
+      <Router>
+        <div className="flex-column justify-flex-start min-100-vh">
+          <div className="container">
+            {/* Wrap Route elements in a Routes component */}
+            <Routes>
+              {/* Define routes using the Route component to render different page components at different paths */}
+              {/* Define a default route that will render the Home component */}
+              <Route 
+                path="/" 
+                element={<Homepage />} 
+              />
+              {/* Define a route that will take in variable data */}
+              <Route 
+                path="/signup" 
+                element={<SignUp />} 
+              />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      </Router>
     </ApolloProvider>
   );
-};
+}
 
-export default App();
+export default App;
