@@ -26,8 +26,28 @@ export const SIGNUP_USER = gql`
   }
 `;
 
-// export const CREATE_LISTING = gql`
-// `;
+export const CREATE_LISTING = gql`
+mutation createListing($title: String!, $description: String!, $price: Int!, $color: String, $condition: String, $size: String!, $image: String) {
+  createListing(title: $title, description: $description, price: $price, color: $color, condition: $condition, size: $size, image: $image) {
+    token
+    listing {
+      _id
+      title
+      description
+      price
+      color
+      condition
+      size
+      image
+    }
+  }
+}
+`;
 
-// export const DELETE_LISTING = gql`
-// `;
+export const DELETE_LISTING = gql`
+  mutation deleteListing ($id: ID!) {
+    deleteListing(id: $id) {
+      token
+    }
+  }
+`;

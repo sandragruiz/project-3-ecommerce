@@ -12,7 +12,7 @@ export const GET_USER = gql`
 
 export const QUERY_USERS = gql`
   query allUsers {
-    User {
+    user {
       _id
       username
       email
@@ -29,18 +29,34 @@ export const GET_BY_USER = gql`
   }
 `;
 
-// export const GET_BY_CATEGORY = gql`
+export const GET_BY_CATEGORY = gql`
+  query category {
+    category {
+      listings
+    }
+  }
+ `;
 
-// `;
+export const GET_BY_SIZE = gql`
+  query listing {
+    listing {
+      size
+    }
+  }
+`;
 
-// export const GET_BY_SIZE = gql`
+export const GET_BY_CONDITION = gql`
+  query listing {
+    listing {
+      condition
+    }
+  }
+`;
 
-// `;
-
-// export const GET_BY_CONDITION = gql`
-
-// `;
-
-// export const GET_BY_COLOR = gql`
-
-// `;
+export const GET_BY_COLOR = gql`
+  query listing {
+    listing {
+      color
+    }
+  }
+`;
