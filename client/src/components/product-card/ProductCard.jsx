@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
-import Modal from './Modal';
 
-export const ProductCard = ({ title, image, price, size, color, condition, seller, createdAt, category_id }) => {
-    const [showModal, setShowModal] = useState(false);
+export const ProductCard = ({ listingId, title, image, price, size }) => {
+  const [showHiddenFields, setShowHiddenFields] = useState(false);
 
-  const handleOpenModal = () => {
-    setShowModal(true);
+  const handleShowHiddenFields = () => {
+    setShowHiddenFields(true);
   };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
-  const hiddenFields = [color, condition, seller, createdAt, category_id];
 
     return (
     <div>
+
+      {/* visible fields */}
+
         <h3>{title}</h3>
         <p>{image}</p>
         <p>{price}</p>
@@ -23,17 +19,17 @@ export const ProductCard = ({ title, image, price, size, color, condition, selle
 
       {/* other listing information users can see once they click on the listing */}
       
-      <button onClick={handleOpenModal}>View</button>
-      {showModal && (
-        <Modal onClose={handleCloseModal}>
-          <h3>.</h3>
-          <ul>
-            {hiddenFields.map((field, index) => (
-              <li key={index}>{field}</li>
-            ))}
-          </ul>
-        </Modal>
+      <button onClick={handleShowHiddenFields}>View</button>
+
+      {/* Display hidden fields when button is clicked */}
+      {showHiddenFields && (
+        <div>
+          <p>{listingId.color}</p>
+          <p>{listingId.condition}</p>
+          <p>{listingId.description}</p>
+        </div>
       )}
+      
     </div>
   );
 };

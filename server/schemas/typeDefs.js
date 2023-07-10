@@ -69,6 +69,16 @@ type Mutation {
     login (email: String!, password: String!): Auth
     addUser (username: String!, email: String!, password: String!): Auth
   }
+
+#for retrieving more listing fields upon clicking on a product
+  type Query {
+    getListingHiddenFields(listingId: ID!): ListingHiddenFields!
+  }
+  
+  type ListingHiddenFields {
+    color: String
+    condition: String
+    description: String
 `;
 
 
