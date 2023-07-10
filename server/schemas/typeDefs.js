@@ -1,19 +1,6 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-# define which fields are accessible from the specified model
-
-type Cart {
-    id: ID!
-    user: User
-    items: [Listing]
-}
-
-type Category {
-    id: ID!
-    name: String!
-}
-
 type Listing {
     id: ID!
     title: String!
@@ -28,6 +15,24 @@ type Listing {
     image: String
 }
 
+type User { 
+    _id: ID!
+    username: String!
+    email: String!
+    listings: [Listing]
+}
+
+type Cart {
+    id: ID!
+    user: User
+    items: [Listing]
+}
+
+type Category {
+    id: ID!
+    name: String!
+}
+
 type Order {
     id: ID!
     customer: User!
@@ -36,13 +41,6 @@ type Order {
     stringAddress: String!
     orderStatus: String!
     items: [Listing]
-}
-
-type User { 
-    _id: ID!
-    username: String!
-    email: String!
-    listings: [Listing]
 }
 
 type Wishlist {
@@ -56,7 +54,6 @@ type Auth {
     user: User
 }
 
-#define which queries the front end is allowed to make and what data is returned
 type Query {
     user (username: String!): User
     getByUser (username: String!): Listing
@@ -70,7 +67,6 @@ type Mutation {
     addUser (username: String!, email: String!, password: String!): Auth
   }
 
-#for retrieving more listing fields upon clicking on a product
   type Query {
     getListingHiddenFields(listingId: ID!): ListingHiddenFields!
   }
@@ -79,6 +75,7 @@ type Mutation {
     color: String
     condition: String
     description: String
+  }
 `;
 
 
