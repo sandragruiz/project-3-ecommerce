@@ -17,6 +17,7 @@ export const SignUp = () => {
             }
         });
         const token = mutationResult.data.addUser.token;
+        console.log("token", token);
         Auth.login(token);
     }
 
