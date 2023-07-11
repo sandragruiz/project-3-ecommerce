@@ -1,4 +1,7 @@
 import React from 'react';
+import Image1 from '../../assets/checker-crop-mask.jpg';
+import Image2 from '../../assets/zipper-black-skirt.jpg';
+import Image3 from '../../assets/man-all-black-outfit.jpg';
 
 export const Homepage = () => {
 
@@ -11,11 +14,11 @@ export const Homepage = () => {
           <div className="relative">
             <img
               className="w-full h-auto object-cover object-center"
-              src="/path/to/image1.jpg"
+              src={Image1}
               alt="1"
             />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <h3 className="text-white text-3xl font-bold">Subtitle 1</h3>
+              <h3 className="text-white text-3xl font-bold">Wear.</h3>
             </div>
           </div>
 
@@ -23,11 +26,11 @@ export const Homepage = () => {
           <div className="relative">
             <img
               className="w-full h-auto object-cover object-center"
-              src="/path/to/image2.jpg"
+              src={Image3}
               alt="2"
             />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <h3 className="text-white text-3xl font-bold">Subtitle 2</h3>
+              <h3 className="text-white text-3xl font-bold">Switch.</h3>
             </div>
           </div>
 
@@ -35,11 +38,11 @@ export const Homepage = () => {
           <div className="relative">
             <img
               className="w-full h-auto object-cover object-center"
-              src="/path/to/image3.jpg"
+              src={Image2}
               alt="3"
             />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <h3 className="text-white text-3xl font-bold">Subtitle 3</h3>
+              <h3 className="text-white text-3xl font-bold">Resurrect.</h3>
             </div>
           </div>
 

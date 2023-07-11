@@ -10,8 +10,12 @@ import { SignUp } from './components/signup/Signup'
 import { Navbar } from './components/navbar/Navbar';
 import '../src/index.css';
 import { Login } from './components/login/Login';
-import { Example } from './components/results-page/Results'
 import { ListingForm } from './components/create-listing-form/ListingForm';
+import { Results } from './components/results-page/Results'
+import { ViewUser } from './components/view-user/ViewUser';
+import { Wishlist } from './components/wishlist/Wishlist';
+import { Cart } from './components/shopping-cart/Cart';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -35,9 +39,9 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      {/* Wrap page elements in Router component to keep track of location state */}
-      <Navbar />
+      {/* Wrap page elements in Router component to keep track of location state */} 
       <Router>
+        <Navbar />
         <div className="flex-column justify-flex-start min-100-vh">
           <div className="container">
             {/* Wrap Route elements in a Routes component */}
@@ -57,9 +61,21 @@ function App() {
                 path="/login" 
                 element={<Login />} 
               />
+              <Route 
+                path="/account" 
+                element={<ViewUser />} 
+              />
               <Route
                 path="/results"
-                element={<Example />}
+                element={<Results />}
+              />
+              <Route
+                path="/wishlist"
+                element={<Wishlist />}
+              />
+              <Route
+                path="/cart"
+                element={<Cart />}
               />
               <Route
                 path="/create-listing"
