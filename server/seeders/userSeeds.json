@@ -1,0 +1,28 @@
+
+[
+    {
+        "username":"useralpha",
+        "email":"user6@example.com",
+        "password":"password1"
+    },
+    {
+        "username":"userbeta",
+        "email":"user2@example.com",
+        "password":"password2"
+    },
+    {
+        "username":"userdelta",
+        "email":"user3@example.com",
+        "password":"password3"
+    },
+    {
+        "username":"useromega",
+        "email":"user4@example.com",
+        "password":"password4"
+    },
+    {
+        "username":"userkappa",
+        "email":"user5@example.com",
+        "password":"password5"
+    }
+]
