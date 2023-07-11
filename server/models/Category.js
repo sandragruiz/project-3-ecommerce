@@ -3,7 +3,7 @@ const { model, Schema } = require('mongoose');
 const categorySchema = new Schema(
     {
         id: {
-            type: String,
+            type: Number,
             required: true
         },
         name: {
