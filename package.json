@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node server/server.js",
     "dev": "concurrently \"npm run start:server\" \"npm run start:client\"",
-    "start:server": "cd server && node server.js",
+    "start:server": "cd server && nodemon server.js",
     "start:client": "cd client && npm start",
     "build": "cd client && npm run build",
     "lint": "eslint .",
@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "concurrently": "^7.6.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1"
   },
   "devDependencies": {
     "eslint": "^8.44.0",
