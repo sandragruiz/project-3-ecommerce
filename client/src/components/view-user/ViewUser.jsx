@@ -1,10 +1,7 @@
 import React from 'react';
-import { DELETE_LISTING } from '../../utils/mutations';
-import { useMutation } from '@apollo/client';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_USER } from '../../utils/queries';
-import { ListingForm } from '../create-listing-form/ListingForm';
 
 //import get me query and mutations for creating and deleting listing. Also maybe create a mutation to delete account??
 

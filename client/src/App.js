@@ -12,6 +12,7 @@ import '../src/index.css';
 import { Login } from './components/login/Login';
 import { Example } from './components/results-page/Results'
 import { ListingForm } from './components/create-listing-form/ListingForm';
+import { ViewUser } from './components/view-user/ViewUser';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -64,6 +65,10 @@ function App() {
               <Route
                 path="/create-listing"
                 element={<ListingForm />}
+              />
+              <Route
+                path="/view-user"
+                element={<ViewUser />}
               />
             </Routes>
           </div>

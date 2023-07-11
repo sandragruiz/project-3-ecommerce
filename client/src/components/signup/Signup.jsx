@@ -17,9 +17,7 @@ export const SignUp = () => {
                 password: document.getElementById('password').value
             }
         });
-        console.log(mutationResult);
         // const token = mutationResult.data.addUser.token;
-        // console.log("token", token);
         // AuthService.login(token);
         return (
             <div>
