@@ -11,6 +11,7 @@ import { Navbar } from './components/navbar/Navbar';
 import '../src/index.css';
 import { Login } from './components/login/Login';
 import { Example } from './components/results-page/Results'
+import { ListingForm } from './components/create-listing-form/ListingForm';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -59,6 +60,10 @@ function App() {
               <Route
                 path="/results"
                 element={<Example />}
+              />
+              <Route
+                path="/create-listing"
+                element={<ListingForm />}
               />
             </Routes>
           </div>
