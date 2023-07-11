@@ -10,7 +10,7 @@ import { SignUp } from './components/signup/Signup'
 import { Navbar } from './components/navbar/Navbar';
 import '../src/index.css';
 import { Login } from './components/login/Login';
-import { Example } from './components/results-page/Results'
+import { Results } from './components/results-page/Results'
 import { ViewUser } from './components/view-user/ViewUser';
 import { Wishlist } from './components/wishlist/Wishlist';
 import { Cart } from './components/shopping-cart/Cart';
@@ -66,7 +66,7 @@ function App() {
               />
               <Route
                 path="/results"
-                element={<Example />}
+                element={<Results />}
               />
               <Route
                 path="/wishlist"
