@@ -1,0 +1,122 @@
+[
+    {
+        "title": "Black Skirt",
+        "description": "A black short skirt with full-length front-zipper",
+        "price": 15,
+        "color": "Black",
+        "condition": "Good, Used",
+        "size": "S",
+        "category_id": 2,
+        "seller":"user1@example.com",
+        "image": "./seedImages/zipper-black-skirt.jpg",
+        "id": 1
+    },
+    {
+        "title": "Patent Block Shoes",
+        "description": "",
+        "price": 25,
+        "color": "Black",
+        "condition": "New",
+        "size": "8 Women",
+        "category_id": 3,
+        "seller":"user1@example.com",
+        "image": "./seedImages/black-block-shoes.jpg",
+        "id": 2
+      },
+      {
+        "title": "Starlight Shoes",
+        "description": "White wedge lace-up shoes, worn once",
+        "price": 20,
+        "color": "White",
+        "condition": "",
+        "size": "Women's 6",
+        "category_id": 3,
+        "seller":"user2@example.com",
+        "image": "./seedImages/stargazing-shoes.jpg",
+        "id": 3
+      },
+      {
+        "title": "Checkered+Black Crop Top",
+        "description": "",
+        "price": 10,
+        "color": "",
+        "condition": "Used",
+        "size": "S",
+        "category_id": 1,
+        "seller":"user2@example.com",
+        "image": "./seedImages/checker-crop-mask.jpg",
+        "id": 4
+      },
+      {
+        "title": "Straight-Cut Pants",
+        "description": "Belt and chains not included",
+        "price": 30,
+        "color": "Black",
+        "condition": "New",
+        "size": "4",
+        "category_id": 2,
+        "seller":"user3@example.com",
+        "image": "./seedImages/black-straight-cut-pants.jpg",
+        "id": 5
+      },
+      {
+        "title": "Bat Shirt",
+        "description": "",
+        "price": 10,
+        "color": "Black",
+        "condition": "Used",
+        "size": "M",
+        "category_id": 1,
+        "seller":"user3@example.com",
+        "image": "./seedImages/bats-shirt.jpg",
+        "id": 6
+      },
+      {
+        "title": "Skeleton Cardigan",
+        "description": "",
+        "price": 35,
+        "color": "",
+        "condition": "New",
+        "size": "L",
+        "category_id": 1,
+        "seller":"user4@example.com",
+        "image": "./seedImages/skeleton-cardigan.jpeg",
+        "id": 7
+      },
+      {
+        "title": "Gothic Moon Choker Necklace",
+        "description": "",
+        "price": 5,
+        "color": "Silver",
+        "condition": "Good",
+        "size": "-",
+        "category_id": 4,
+        "seller":"user5@example.com",
+        "image": "./seedImages/gothic-moon-choker.jpg",
+        "id": 8
+      },
+      {
+        "title": "Ghost Sling Bag",
+        "description": "Comes with adjustable strap. Faux leather.",
+        "price": 15,
+        "color": "White",
+        "condition": "New",
+        "size": "-",
+        "category_id": 4,
+        "seller":"user5@example.com",
+        "image": "./seedImages/ghost-sling-bag.jpg",
+        "id": 9
+      },
+      {
+        "title": "Unlucky Charms Backpack",
+        "description": "",
+        "price": 20,
+        "color": "Black",
+        "condition": "Used",
+        "size": "-",
+        "category_id": 4,
+        "seller":"user5@example.com",
+        "image": "./seedImages/unlucky-charms.jpg",
+        "id": 10
+      }
+]

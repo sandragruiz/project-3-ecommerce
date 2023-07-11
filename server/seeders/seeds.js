@@ -1,7 +1,8 @@
 const connectDB = require('../config/connection');
 const categorySeeds = require('./categoryseeds');
-const { User, Category } = require('../models');
+const { User, Category, Listing } = require('../models');
 const userSeeds = require('./userSeeds.json');
+const listingSeeds = require('./listingSeeds.json');
 
 /*const deleteSeeds = async () => {
   try {
@@ -13,6 +14,9 @@ const userSeeds = require('./userSeeds.json');
     await Category.deleteMany({});
     console.log('Categories deleted.');
 
+    await Listing.deleteMany({});
+    console.log('Listings deleted');
+
     console.log('Seeds deleted successfully!');
     process.exit(0);
   } catch (error) {
@@ -21,7 +25,7 @@ const userSeeds = require('./userSeeds.json');
   }
 };
 
-deleteSeeds();*/
+deleteSeeds(); */
 
 
 const seedDatabase = async () => {
@@ -33,6 +37,9 @@ const seedDatabase = async () => {
 
     await Category.insertMany(categorySeeds);
     console.log('Categories seeded successfully:');
+
+    await Listing.insertMany(listingSeeds);
+    console.log('Listings seeded successfully');
 
     console.log('Seeding completed successfully!');
     process.exit(0);
