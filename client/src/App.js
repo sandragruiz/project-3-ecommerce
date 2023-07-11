@@ -12,6 +12,8 @@ import '../src/index.css';
 import { Login } from './components/login/Login';
 import { Example } from './components/results-page/Results'
 import { ViewUser } from './components/view-user/ViewUser';
+import { Wishlist } from './components/wishlist/Wishlist';
+import { Cart } from './components/shopping-cart/Cart';
 
 
 const httpLink = createHttpLink({
@@ -65,6 +67,14 @@ function App() {
               <Route
                 path="/results"
                 element={<Example />}
+              />
+              <Route
+                path="/wishlist"
+                element={<Wishlist />}
+              />
+              <Route
+                path="/cart"
+                element={<Cart />}
               />
             </Routes>
           </div>
