@@ -41,7 +41,11 @@ export const SignUp = () => {
 
             <label htmlFor="password">Password</label>
             <input name='password' id='password'></input>
-            <button className="btn btn-info btn-block py-3" type="submit" onClick={handleFormSubmit}>
+            <button 
+              className="btn btn-info btn-block py-3" 
+              type="submit" 
+              onClick={handleFormSubmit}
+              >
             Sign Up!
           </button>
         </form>

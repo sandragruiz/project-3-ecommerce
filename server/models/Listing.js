@@ -3,13 +3,16 @@ const { Schema, model } = require('mongoose');
 
 const listingSchema = new Schema(
     {
+        id: {
+            type: Number,
+            required: true
+        },
         title: {
             type: String,
             required: true
         },
         description: {
             type: String,
-            required: true
         },
         price: {
             type: Number,
@@ -20,21 +23,19 @@ const listingSchema = new Schema(
         },
         condition: {
             type: String,
-            required: true
         },
         size: {
             type: String,
-            required: true
         },
         seller: {
-            type: Schema.Types.ObjectId,
+            type: String,
             ref: 'User'
         },
         createdAt: {
             type: Date,
         },
         category_id: {
-            type: Schema.Types.ObjectId,
+            type: Number,
             ref: 'Category'
         },
         image: String

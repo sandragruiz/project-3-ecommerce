@@ -1,47 +1,44 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { LOGIN_USER } from '../../utils/mutations';
+import { useMutation } from '@apollo/client';
+import Auth from '../../utils/auth';
 
-export const  Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+export const Login = () => {
+  const [ loginUser ] = useMutation(LOGIN_USER);
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
-   
+    const mutationResult = await loginUser({
+      variables: {
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+      },
+    });
+    const token = mutationResult.data.login.token;
+    console.log("token", token);
+    Auth.login(token);
   };
 
   return (
     <div>
-      <h2>Please login to continue!</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={handleEmailChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        <button type="submit">Login!</button>
+      <h2>Login</h2>
+      <form>
+        <label htmlFor="email">E-mail</label>
+        <input name="email" id="email" />
+
+        <label htmlFor="password">Password</label>
+        <input name="password" id="password" />
+
+        <button
+          className="btn btn-info btn-block py-3"
+          type="submit"
+          onClick={handleFormSubmit}
+        >
+          Login
+        </button>
       </form>
     </div>
   );
-}
+};
+
 
