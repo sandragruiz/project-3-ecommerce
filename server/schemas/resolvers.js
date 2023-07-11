@@ -23,15 +23,18 @@ const resolvers = {
     user: async (_parent, { email }) => {
       return User.findOne({ email }).select('-__v -password');
     },
+    // getListingHiddenFields
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
       // create the user
+      console.log('The username is potato!!');
       const user = await User.create({ username, email, password });
       // to reduce friction for the user, sign a JSON Web Token and log the user in after they are created
-      const token = signToken(user);
+      console.log(user);
+      // const token = signToken(user);
       // Return an `Auth` object that consists of the signed token and user's information
-      return { token, user };
+      return user;
     },
     login: async (parent, { email, password }) => {
       // Look up the user by the provided email address. Since the `email` field is unique, we know that only one person will exist with that email
@@ -57,7 +60,6 @@ const resolvers = {
       return { token, user };
     },
   },
-  Query: {
-    getListingHiddenFields,
-  },
 };
+
+module.exports = resolvers;

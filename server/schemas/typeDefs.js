@@ -50,8 +50,14 @@ type Wishlist {
 }
 
 type Auth {
-    token: String!
+    token: String
     user: User
+}
+
+type ListingHiddenFields {
+    color: String
+    condition: String
+    description: String
 }
 
 type Query {
@@ -61,23 +67,12 @@ type Query {
     getBySize (size: String!): Listing
     getByCondition (condition: String!): Listing
     getByColor (color: String!): Listing
+    getListingHiddenFields(listingId: ID!): ListingHiddenFields!
 }
 type Mutation {
     login (email: String!, password: String!): Auth
-    addUser (username: String!, email: String!, password: String!): Auth
-  }
-
-  type Query {
-    getListingHiddenFields(listingId: ID!): ListingHiddenFields!
-  }
-  
-  type ListingHiddenFields {
-    color: String
-    condition: String
-    description: String
-  }
+    addUser (username: String!, email: String!, password: String!): User 
+}
 `;
-
-
 
 module.exports = typeDefs;

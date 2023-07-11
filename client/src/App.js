@@ -10,6 +10,7 @@ import { SignUp } from './components/signup/Signup'
 import { Navbar } from './components/navbar/Navbar';
 import '../src/index.css';
 import { Login } from './components/login/Login';
+import { ListingForm } from './components/create-listing-form/ListingForm';
 import { Results } from './components/results-page/Results'
 import { ViewUser } from './components/view-user/ViewUser';
 import { Wishlist } from './components/wishlist/Wishlist';
@@ -75,6 +76,10 @@ function App() {
               <Route
                 path="/cart"
                 element={<Cart />}
+              />
+              <Route
+                path="/create-listing"
+                element={<ListingForm />}
               />
             </Routes>
           </div>

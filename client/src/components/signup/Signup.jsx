@@ -1,7 +1,8 @@
 import React from 'react';
 import { SIGNUP_USER } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';
-import Auth from '../../utils/auth';
+import AuthService from '../../utils/auth';
+import { Link } from 'react-router-dom';
 
 export const SignUp = () => {
     const [ addUser ] = useMutation(SIGNUP_USER);
@@ -16,9 +17,18 @@ export const SignUp = () => {
                 password: document.getElementById('password').value
             }
         });
-        const token = mutationResult.data.addUser.token;
-        console.log("token", token);
-        Auth.login(token);
+        console.log(mutationResult);
+        // const token = mutationResult.data.addUser.token;
+        // console.log("token", token);
+        // AuthService.login(token);
+        return (
+            <div>
+                <h3>You're signed up! You may return to the homepage now.</h3>
+                    <Link to="/">
+                        <button>Return to Home</button>
+                    </Link>
+            </div>
+        );
     }
 
     return (
