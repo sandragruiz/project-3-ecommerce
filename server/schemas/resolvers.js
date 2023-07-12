@@ -5,25 +5,24 @@ const { signToken } = require('../utils/auth');
 
 // Create the functions that fulfill the queries defined in `typeDefs.js`
 
-const getListingHiddenFields = async (_, { listingId }) => {
-  try {
-    const listing = await Listing.findById(listingId).select('color condition size').exec();
-    return {
-      color: listing.color,
-      condition: listing.condition,
-      description: listing.description
-    };
-  } catch (error) {
-    throw new Error('Failed to fetch listing hidden fields.');
-  }
-};
+// const getListingHiddenFields = async (_, { listingId }) => {
+//   try {
+//     const listing = await Listing.findById(listingId).select('color condition size').exec();
+//     return {
+//       color: listing.color,
+//       condition: listing.condition,
+//       description: listing.description
+//     };
+//   } catch (error) {
+//     throw new Error('Failed to fetch listing hidden fields.');
+//   }
+// };
 
 const resolvers = {
   Query: {
     user: async (_parent, { email }) => {
       return User.findOne({ email }).select('-__v -password');
     },
-    // getListingHiddenFields
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
@@ -60,6 +59,20 @@ const resolvers = {
       return { token, user };
     },
   },
+  
+  Query: {
+    categories: async () => {
+      try {
+        const categories = await Category.find();
+        console.log('found categories')
+        return categories,
+        console.log('returned categories')
+        
+      } catch (error) {
+        throw new Error('Failed to fetch categories');
+      }
+    },
+  }
 };
 
 module.exports = resolvers;

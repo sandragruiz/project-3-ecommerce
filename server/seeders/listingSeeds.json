@@ -6,10 +6,9 @@
         "color": "Black",
         "condition": "Good, Used",
         "size": "S",
-        "category_id": 2,
+        "category_id": "64adbfda197e59a4db6bb2c2",
         "seller":"user1@example.com",
-        "image": "./seedImages/zipper-black-skirt.jpg",
-        "id": 1
+        "image": "./seedImages/zipper-black-skirt.jpg"
     },
     {
         "title": "Patent Block Shoes",
@@ -18,10 +17,9 @@
         "color": "Black",
         "condition": "New",
         "size": "8 Women",
-        "category_id": 3,
+        "category_id": "64adbfda197e59a4db6bb2c3",
         "seller":"user1@example.com",
-        "image": "./seedImages/black-block-shoes.jpg",
-        "id": 2
+        "image": "./seedImages/black-block-shoes.jpg"
       },
       {
         "title": "Starlight Shoes",
@@ -30,10 +28,9 @@
         "color": "White",
         "condition": "",
         "size": "Women's 6",
-        "category_id": 3,
+        "category_id": "64adbfda197e59a4db6bb2c3",
         "seller":"user2@example.com",
-        "image": "./seedImages/stargazing-shoes.jpg",
-        "id": 3
+        "image": "./seedImages/stargazing-shoes.jpg"
       },
       {
         "title": "Checkered+Black Crop Top",
@@ -42,10 +39,9 @@
         "color": "",
         "condition": "Used",
         "size": "S",
-        "category_id": 1,
+        "category_id": "64adbfda197e59a4db6bb2c1",
         "seller":"user2@example.com",
-        "image": "./seedImages/checker-crop-mask.jpg",
-        "id": 4
+        "image": "./seedImages/checker-crop-mask.jpg"
       },
       {
         "title": "Straight-Cut Pants",
@@ -54,10 +50,9 @@
         "color": "Black",
         "condition": "New",
         "size": "4",
-        "category_id": 2,
+        "category_id": "64adbfda197e59a4db6bb2c2",
         "seller":"user3@example.com",
-        "image": "./seedImages/black-straight-cut-pants.jpg",
-        "id": 5
+        "image": "./seedImages/black-straight-cut-pants.jpg"
       },
       {
         "title": "Bat Shirt",
@@ -66,10 +61,9 @@
         "color": "Black",
         "condition": "Used",
         "size": "M",
-        "category_id": 1,
+        "category_id": "64adbfda197e59a4db6bb2c1",
         "seller":"user3@example.com",
-        "image": "./seedImages/bats-shirt.jpg",
-        "id": 6
+        "image": "./seedImages/bats-shirt.jpg"
       },
       {
         "title": "Skeleton Cardigan",
@@ -78,10 +72,9 @@
         "color": "",
         "condition": "New",
         "size": "L",
-        "category_id": 1,
+        "category_id": "64adbfda197e59a4db6bb2c1",
         "seller":"user4@example.com",
-        "image": "./seedImages/skeleton-cardigan.jpeg",
-        "id": 7
+        "image": "./seedImages/skeleton-cardigan.jpeg"
       },
       {
         "title": "Gothic Moon Choker Necklace",
@@ -90,10 +83,9 @@
         "color": "Silver",
         "condition": "Good",
         "size": "-",
-        "category_id": 4,
+        "category_id": "64adbfda197e59a4db6bb2c4",
         "seller":"user5@example.com",
-        "image": "./seedImages/gothic-moon-choker.jpg",
-        "id": 8
+        "image": "./seedImages/gothic-moon-choker.jpg"
       },
       {
         "title": "Ghost Sling Bag",
@@ -102,10 +94,9 @@
         "color": "White",
         "condition": "New",
         "size": "-",
-        "category_id": 4,
+        "category_id": "64adbfda197e59a4db6bb2c4",
         "seller":"user5@example.com",
-        "image": "./seedImages/ghost-sling-bag.jpg",
-        "id": 9
+        "image": "./seedImages/ghost-sling-bag.jpg"
       },
       {
         "title": "Unlucky Charms Backpack",
@@ -114,9 +105,8 @@
         "color": "Black",
         "condition": "Used",
         "size": "-",
-        "category_id": 4,
+        "category_id": "64adbfda197e59a4db6bb2c4",
         "seller":"user5@example.com",
-        "image": "./seedImages/unlucky-charms.jpg",
-        "id": 10
+        "image": "./seedImages/unlucky-charms.jpg"
       }
 ]

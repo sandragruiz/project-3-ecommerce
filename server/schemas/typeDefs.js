@@ -29,7 +29,6 @@ type Cart {
 }
 
 type Category {
-    id: ID!
     name: String!
 }
 
@@ -68,6 +67,7 @@ type Query {
     getByCondition (condition: String!): Listing
     getByColor (color: String!): Listing
     getListingHiddenFields(listingId: ID!): ListingHiddenFields!
+    categories: [Category]
 }
 type Mutation {
     login (email: String!, password: String!): Auth
