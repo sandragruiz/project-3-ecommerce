@@ -23,7 +23,6 @@ const resolvers = {
     user: async (_parent, { email }) => {
       return User.findOne({ email }).select('-__v -password');
     },
-    // getListingHiddenFields
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
@@ -60,6 +59,13 @@ const resolvers = {
       return { token, user };
     },
   },
+  
+  Query: {
+    categories: async () => {
+      const categories = await Category.find();
+      return categories;
+    },
+  }
 };
 
 module.exports = resolvers;

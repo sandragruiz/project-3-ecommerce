@@ -1,11 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AccountMenu } from '../account-menu-navbar/AccountMenu';
+import { GET_CATEGORIES } from '../../utils/queries';
+import { useQuery } from '@apollo/client';
 
 export const Navbar = () => {
+  const { loading, error, data } = useQuery(GET_CATEGORIES);
+  if (loading) {
+    return <div>Loading categories...</div>;
+  }
+  if (error) {
+    return <div>Error loading categories</div>;
+  }
+  const categories = data.categories;
+
   return (
     <nav className="flex flex-wrap items-center justify-between py-4 px-6">
-      
       <div className="w-full md:w-auto flex items-center justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-4">
         {/* Category Dropdown Menu */}
         <div className="relative">
@@ -14,6 +24,17 @@ export const Navbar = () => {
             Browse categories
           </button>
           {/* Dropdown Menu with Categories */}
+          <div className="absolute hidden z-10 bg-white py-2 w-48 rounded shadow-md">
+            {categories.map((category) => (
+              <Link
+                key={category.id}
+                to={`/category/${category.id}`}
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              >
+                {category.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 

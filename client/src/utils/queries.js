@@ -60,3 +60,12 @@ export const GET_BY_COLOR = gql`
     }
   }
 `;
+
+export const GET_CATEGORIES = gql`
+  query {
+    categories {
+      id
+      name
+    }
+  }
+`;
