@@ -1,7 +1,6 @@
 import React from 'react';
 import { SIGNUP_USER } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';
-import AuthService from '../../utils/auth';
 import { Link } from 'react-router-dom';
 
 export const SignUp = () => {

@@ -1,26 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CREATE_LISTING } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 
 
 export const ListingForm = () => {
+  const [formState, setFormState] = useState({title:'',description:'',price:0,color:'',condition:'',size:''})
   const [ createListing ] = useMutation(CREATE_LISTING);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log("this works!!");
+
+
     const mutationResult = await createListing({
       variables: {
-        title:  document.getElementById('title').value,
-        description:  document.getElementById('description').value,
-        price:  document.getElementById('price').value,
-        color:  document.getElementById('color').value,
-        condition:  document.getElementById('condition').value,
-        size:  document.getElementById('size').value,
+        title: formState.title,
+        description: formState.description,
+        price: formState.price,
+        color: formState.color,
+        condition: formState.condition,
+        size: formState.size,
       }
     });
-    console.log(mutationResult);
     return (
         <div>
             <h3>Your new listing has been created! You may return to the homepage now.</h3>
@@ -29,7 +30,15 @@ export const ListingForm = () => {
                 </Link>
         </div>
     )
-  }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value
+    })
+  };
 
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -59,6 +68,7 @@ export const ListingForm = () => {
             </label>
             <div className="mt-2.5">
               <input
+                onChange={handleChange}
                 type="text"
                 name="title"
                 id="title"
@@ -72,6 +82,7 @@ export const ListingForm = () => {
             </label>
             <div className="mt-2.5">
               <input
+                onChange={handleChange}
                 type="text"
                 name="size"
                 id="size"
@@ -85,6 +96,7 @@ export const ListingForm = () => {
             </label>
             <div className="mt-2.5">
               <input
+                onChange={handleChange}
                 type="number"
                 name="price"
                 id="price"
@@ -98,6 +110,7 @@ export const ListingForm = () => {
             </label>
             <div className="mt-2.5">
               <input
+                onChange={handleChange}
                 type="text"
                 name="condition"
                 id="condition"
@@ -111,6 +124,7 @@ export const ListingForm = () => {
             </label>
             <div className="mt-2.5">
               <textarea
+                onChange={handleChange}
                 type="text"
                 name="color"
                 id="color"
@@ -124,6 +138,7 @@ export const ListingForm = () => {
             </label>
             <div className="mt-2.5">
               <textarea
+                onChange={handleChange}
                 name="description"
                 id="description"
                 rows={4}
