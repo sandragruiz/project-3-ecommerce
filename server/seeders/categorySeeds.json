@@ -1,8 +1,8 @@
 
 [
-    { "name": "Tops", "id": "1"},
-    { "name": "Bottoms", "id": "2"},
-    { "name": "Shoes", "id": "3" },
-    { "name": "Accessories", "id": "4" },
-    { "name": "Dresses", "id": "5" }
+    { "name": "Tops" },
+    { "name": "Bottoms" },
+    { "name": "Shoes" },
+    { "name": "Accessories" },
+    { "name": "Dresses" }
 ]

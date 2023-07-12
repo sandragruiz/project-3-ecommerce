@@ -3,10 +3,6 @@ const { Schema, model } = require('mongoose');
 
 const listingSchema = new Schema(
     {
-        id: {
-            type: Number,
-            required: true
-        },
         title: {
             type: String,
             required: true
@@ -35,7 +31,7 @@ const listingSchema = new Schema(
             type: Date,
         },
         category_id: {
-            type: Number,
+            type: Schema.Types.ObjectId,
             ref: 'Category'
         },
         image: String

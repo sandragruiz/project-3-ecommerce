@@ -7,8 +7,8 @@ export const Homepage = () => {
 
     return (
     
-    <div className="bg-gray-100">
-      <div className="flex flex-col items-center justify-center bg-gray-100 py-16 sm:py-24 lg:py-32">
+    <div className="min-h-screen">
+      <div className="flex flex-col items-center justify-center py-16 sm:py-24 lg:py-32">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {/* Image 1 */}
           <div className="relative">
@@ -18,7 +18,7 @@ export const Homepage = () => {
               alt="1"
             />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <h3 className="text-white text-3xl font-bold">Wear.</h3>
+              <h3 className="text-fang text-3xl font-bold">Wear.</h3>
             </div>
           </div>
 
@@ -30,7 +30,7 @@ export const Homepage = () => {
               alt="2"
             />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <h3 className="text-white text-3xl font-bold">Switch.</h3>
+              <h3 className="text-fang text-3xl font-bold">Switch.</h3>
             </div>
           </div>
 
@@ -42,17 +42,17 @@ export const Homepage = () => {
               alt="3"
             />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <h3 className="text-white text-3xl font-bold">Resurrect.</h3>
+              <h3 className="text-fang text-3xl font-bold">Resurrect.</h3>
             </div>
           </div>
 
           {/* About Section */}
-      <div className="bg-white py-16 sm:py-24 lg:py-32">
+      <div className="py-16 sm:py-24 lg:py-32">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-8">
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-midnight mb-8">
             About Us
           </h2>
-          <p className="text-lg text-gray-800 mb-8">
+          <p className="text-lg text-midnight mb-8">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec elit sit amet
             risus dignissim scelerisque. Fusce consequat urna sed elementum cursus.
           </p>
@@ -98,7 +98,7 @@ export const Homepage = () => {
             </div>
             <button
               type="submit"
-              className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-colors duration-300"
+              className="bg-vamp text-fang px-6 py-3 rounded-md hover:bg-blue-600 transition-colors duration-300"
             >
               Send
             </button>
