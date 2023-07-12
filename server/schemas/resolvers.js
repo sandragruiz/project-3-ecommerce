@@ -27,10 +27,8 @@ const resolvers = {
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
       // create the user
-      console.log('The username is potato!!');
       const user = await User.create({ username, email, password });
       // to reduce friction for the user, sign a JSON Web Token and log the user in after they are created
-      console.log(user);
       // const token = signToken(user);
       // Return an `Auth` object that consists of the signed token and user's information
       return user;
@@ -56,7 +54,12 @@ const resolvers = {
       const token = signToken(user);
 
       // Return an `Auth` object that consists of the signed token and user's information
-      return { token, user };
+      return { token, user};
+      
+    },
+    createListing: async (parent, { title, description, price, color, condition, size }) => {
+      const listing = await Listing.create({ title, description, price, color, condition, size });
+      return listing;
     },
   },
   

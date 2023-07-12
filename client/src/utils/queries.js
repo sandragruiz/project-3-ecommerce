@@ -16,13 +16,12 @@ export const QUERY_USERS = gql`
       _id
       username
       email
-      password
     }
   }
 `;
 
 export const GET_BY_USER = gql`
-  query user {
+  query getByUser {
     user {
       listings
     }

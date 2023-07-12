@@ -81,6 +81,10 @@ function App() {
                 path="/create-listing"
                 element={<ListingForm />}
               />
+              <Route
+                path="/view-user"
+                element={<ViewUser />}
+              />
             </Routes>
           </div>
           <Footer />
