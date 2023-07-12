@@ -8,7 +8,7 @@ An online thriftstore/marketplace where people can buy and sell their secondhand
 
 The website can be accessed here: https://threads-resurrected-8846c54f8981.herokuapp.com/ 
 
-    ![Homepage](./client/src/assets/site-screenshot.png)
+![](./client/src/assets/site-screenshot.png)
 
 
 ## Technologies Used
