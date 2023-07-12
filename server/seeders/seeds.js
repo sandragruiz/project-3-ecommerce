@@ -25,7 +25,7 @@ const listingSeeds = require('./listingSeeds.json');
   }
 };
 
-deleteSeeds(); */
+deleteSeeds();*/
 
 
 const seedDatabase = async () => {
