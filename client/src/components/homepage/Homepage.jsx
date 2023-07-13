@@ -53,8 +53,13 @@ export const Homepage = () => {
             About Us
           </h2>
           <p className="text-lg text-midnight mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec elit sit amet
-            risus dignissim scelerisque. Fusce consequat urna sed elementum cursus.
+          With online clothes shopping on the rise, many scramble to get what's fashionable and less expensive in search for new ways to express their style. 
+          However, many of these options are often unethical and bad for the planet. Our mission is to bring new life into your closet without breaking the bank and
+          making healthier choices for the planet! If your style leans more alternative and you want to find all sorts different 
+          or discontinued pieces to buy, or want to free yourself from some of your own, Threads:Resurrected is for you.
+
+          Swapping your closet while keeping your essence has never been this easy!
+
           </p>
         </div>
       </div>
